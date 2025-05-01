@@ -1,114 +1,29 @@
-# Name : JAGAN JP
-# Reg no : 212224230099
+## EX 1: DDA ALGORITHM 
+# NAME: JAGAN JP
+# REG.NO: 212224230099
 
 
-# EX 4 : ELLIPSE DRAWING ALGORITHM
+# Aim :
+To  implement the DDA algorithm to draw a line using a c coding
 
-# AIM :
-To  implement the Bresenham’s  algorithm for ellipse using a c coding.
+# Algorithms :
 
-# EQUIPMENT REQUIRED:
+Step 1 − Get the input of two end points (X0,Y0) and (X1,Y1)
 
-●	Hardware: Personal Computer (PC)
+Step 2 − Calculate the difference between two end points dx and  dy 
 
-●	Software: C Compiler
+Step 3 − If dx > dy, then you need more steps in x coordinate; otherwise in y coordinate.
 
-# ALGORITHM :
+Step 4 − Calculate the increment in x coordinate and y coordinate
 
-Step 1 : Start.
-  
-Step 2 : Initialize the graphics header files and functions.
-   
-Step 3 : Declare the required variables and functions.
- 
-Step 4 : Get the co-ordinates and radius of the ellipse.
-
-Step 5 : Draw the ellipse using the algorithm.
-
-Step  6 : Display the output.
- 
-Step 7 : stop.
-
+Step 5 − Plot the pixel by successfully incrementing x and y coordinates accordingly and complete the drawing of the line
 
 # Program :
-
-```
-#include "stdio.h" 
-#include "conio.h" 
-#include "math.h" 
-#include "graphics.h" 
-main() 
-{ 
-  int gd=DETECT,gm; 
-  int xcenter,ycenter,rx,ry; 
-  int p,x,y,px,py,rx1,ry1,rx2,ry2; 
-  initgraph(&gd,&gm,"c:\\turboc3\\bgi");
-  printf("Enter The Radius Value:\n"); 
-  scanf("%d%d",&rx,&ry); 
-  printf("Enter The xcenter and ycenter Values:\n"); 
-  scanf("%d%d",&xcenter,&ycenter); 
-  ry1=ry*ry; 
-  rx1=rx*rx; 
-  ry2=2*ry1; 
-  rx2=2*rx1; 
-x=0; 
-  y=ry; 
-  plotpoints(xcenter,ycenter,x,y); 
-  p=(ry1-rx1*ry+(0.25*rx1)); 
-  px=0; 
-  py=rx2*y; 
-  while(px<py) 
-  { 
-   x=x+1; 
-   px=px+ry2; 
-   if(p>=0) 
-    y=y-1; 
-    py=py-rx2; 
- 
- 
-    if(p<0) 
-     p=p+ry1+px; 
-    else 
-     p=p+ry1+px-py; 
-  plotpoints(xcenter,ycenter,x,y); 
-p=(ry1*(x+0.5)*(x+0.5)+rx1*(y-1)*(y-1)-rx1*ry1);
-while(y>0)
-  { 
-   y=y-1; 
-   py=py-rx2; 
-   if(p<=0) 
-   { 
-    x=x+1; 
-    px=px+ry2; 
-            } 
-                     if(p>0) 
-    p=p+rx1-py; 
-   else 
-    p=p+rx1-py+px; 
-               plotpoints(xcenter,ycenter,x,y); 
-          } 
-      } 
-  getch(); 
-  return(0); 
-            } 
- 
-int plotpoints(int xcenter,int ycenter,int x,int y) 
-{ 
-  putpixel(xcenter+x,ycenter+y,6); 
-  putpixel(xcenter-x,ycenter+y,6); 
-  putpixel(xcenter+x,ycenter-y,6); 
-  putpixel(xcenter-x,ycenter-y,6);
-  return 0;
- 
-}
-```
-
+![Screenshot 2025-04-30 200757](https://github.com/user-attachments/assets/b638e631-9031-4a63-a877-8f379f1b4edc)
 
 # Output :
 
-![Screenshot (8)](https://github.com/user-attachments/assets/7511bec1-d012-48cd-a77f-1554e609dd51)
-
+![Screenshot 2025-04-30 200821](https://github.com/user-attachments/assets/d771f8ba-d8e2-4f70-aae3-59b0108af319)
 
 # Result :
-
-Thus the Bresenham’s  algorithm for ellipse using a c coding is implemented successfully .
+To implement the DDA algorithm to draw a line using a c coding is verified successfully
